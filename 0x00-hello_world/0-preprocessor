@@ -1,2 +1,2 @@
-i#!/bin/bash\n
+i#!/bin/basn
 gcc -E $CFILE -o c
