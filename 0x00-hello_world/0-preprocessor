@@ -1,2 +1,2 @@
-i#!/bin/basn
+#!/bin/basn
 gcc -E $CFILE -o c
