@@ -2,6 +2,7 @@
 
 /**
  * main - print the sting in the put function
+ * Description: using the main function
  * Return: 0
  */
 int main(void)
