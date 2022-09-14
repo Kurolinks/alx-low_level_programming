@@ -1,14 +1,12 @@
 #include "main.h"
 
 /**
+ *main - print putchar
+ *Desxription: a program thar prints _putchar followed by a new line
+ *Return: always 0
  *
- *  * main - print putchar
  *
- *   * Return: always 0
- *
- * 
  */
-
 
 
 int main(void)
@@ -34,9 +32,6 @@ int main(void)
 	_putchar('\n');
 
 
-
 	return (0);
-
-
 
 }
