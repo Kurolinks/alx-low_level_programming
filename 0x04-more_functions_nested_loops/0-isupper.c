@@ -4,7 +4,7 @@
  *_isupper - checks if a  character is uppercase or not
  *
  *@c: character to be tested
- *
+ *Description: a funtion to check if a character is uppercase or not
  *Return: 1 whether it is, 0 otherwise
  *
  */
