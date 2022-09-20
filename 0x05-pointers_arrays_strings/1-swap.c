@@ -6,7 +6,7 @@
  * @b: this is the second arrray
  *
  */
-
+{
 void swap_int(int *a, int *b)
 
 	int changed;
@@ -14,3 +14,4 @@ void swap_int(int *a, int *b)
 	changed = *a;
 	*a = *b;
 	*b = changed;
+}
