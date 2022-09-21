@@ -13,12 +13,12 @@ void puts_half(char *str)
 
 	half = index / 2;
 
-	if (index % 2 == i)
+	if (index % 2 == 1)
 		half++;
 
 	while (half < index)
 	{
-		_puutchar(str[half]);
+		_putchar(str[half]);
 		half++;
 	}
 	_putchar('\n');
