@@ -1,26 +1,18 @@
 #include "main.h"
 
 /**
- *_strchr -> string character
- *@s: string given
- *@c: another char
- *Return: a string
+ * _memcpy -> memory copy
+ *@dest: is destination memory
+ *@src: is source memory
+ *@n: number of bytes to be copied
+ *Return: string copied from source
  */
 
-char *_strchr(char *s, char c)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-		int a;
+	unsigned int a;
 
-		while (1)
-		{
-			a = *s++;
-			if (a == c)
-			{
-				return (s - 1);
-			}
-			if (a == 0)
-			{
-				return (NULL);
-			}
-		}
+	for (a = 0; a < n; a++)
+		dest[a] = src[a];
+	return (dest);
 }
