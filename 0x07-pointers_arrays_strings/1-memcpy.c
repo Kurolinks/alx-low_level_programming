@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- *
  *_strchr -> string character
  *@s: string given
  *@c: another char
