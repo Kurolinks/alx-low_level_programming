@@ -1,44 +1,45 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
- * string_nconcat - Concatenates two strings using at
- *                  most an inputted number of bytes.
- * @s1: The first string.
- * @s2: The second string.
- * @n: The maximum number of bytes of s2 to concatenate to s1.
- *
- * Return: If the function fails - NULL.
- *         Otherwise - a pointer to the concatenated space in memory.
- */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+  *_strdup - returns a pointer to a newly alloctaed
+  *space in memory which contains a copy of the string
+  *passed.
+  *@str: pointer to string being duplicated.
+  *
+  *Return: NULL if str is NULL.
+  *pointer to duplicated string on success.
+  *NULL if memory was insufficient.
+  */
+char *_strdup(char *str)
 {
-	char *concat;
-	unsigned int len = n, index;
+	char *nstr;
+	unsigned int len, i;
 
-	if (s1 == NULL)
-		s1 = "";
-
-	if (s2 == NULL)
-		s2 = "";
-
-	for (index = 0; s1[index]; index++)
-		len++;
-
-	concat = malloc(sizeof(char) * (len + 1));
-
-	if (concat == NULL)
+	/* check is str is null */
+	if (str == NULL)
+	{
 		return (NULL);
+	}
 
 	len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
 
-	for (index = 0; s1[index]; index++)
-		concat[len++] = s1[index];
+	nstr = malloc(sizeof(char) * (len + 1));
 
-	for (index = 0; s2[index] && index < n; index++)
-		concat[len++] = s2[index];
+	/*check if malloc was successful*/
+	if (nstr == NULL)
+	{
+		return (NULL);
+	}
 
-	concat[len] = '\0';
+	for (i = 0; i < len; i++)
+	{
+		nstr[i] = str[i];
+	}
+	nstr[len] = '\0';
+	return (nstr);
 
-	return (concat);
 }

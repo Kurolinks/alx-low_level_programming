@@ -1,31 +1,48 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
- * array_range - Creates an array of integers ordered
- *               from min to max, inclusive.
- * @min: The first value of the array.
- * @max: The last value of the array.
+ * alloc_grid - create a matrix using malloc
+ * @width: width of the matrix
+ * @height: height of the matrix
  *
- * Return: If min > max or the function fails - NULL.
- *         Otherwise - a pointer to the newly created array.
+ * Return: return a pointer of pointer or null
  */
-int *array_range(int min, int max)
+int **alloc_grid(int width, int height)
 {
-	int *array, index, size;
+	int i, j, a, b;
+	int **p;
 
-	if (min > max)
+	if (width <= 0 || height <= 0)
+	{
 		return (NULL);
-
-	size = max - min + 1;
-
-	array = malloc(sizeof(int) * size);
-
-	if (array == NULL)
-		return (NULL);
-
-	for (index = 0; index < size; index++)
-		array[index] = min++;
-
-	return (array);
-}
+	}
+	else
+	{
+		p = (int **) malloc(height * sizeof(int *));
+		/* we have to make a malloc per pointer*/
+		if (!p)
+		{
+			free(p);
+			return (NULL);
+		}
+		for (i = 0; i < height; i++)
+		{
+			p[i] = (int *) malloc(width * sizeof(int));
+			if (!p[i])
+			{
+				for (j = 0; j <= i; j++)
+					free(p[j]);
+				free(p);
+				return (NULL);
+			}
+		}
+		for (a = 0; a < height; a++)
+		{
+			for (b = 0; b < width; b++)
+			{
+				p[a][b] = 0;
+			}
+		}
+		return (p);
+	}
+}}
